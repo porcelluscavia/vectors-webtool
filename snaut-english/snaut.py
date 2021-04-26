@@ -96,6 +96,7 @@ def app_factory(conf, init_semspace=None):
     allow_space_change = conf.getboolean('semantic_space', 'allow_space_change')
 
     preload_space = conf.getboolean('semantic_space', 'preload_space')
+    multiple_spaces = conf.getboolean('semantic_space', 'multiple_spaces')
 
     def log_data(f):
         """Decorator that logs request data."""
@@ -153,6 +154,19 @@ def app_factory(conf, init_semspace=None):
             print('Pre-loading semantic space: %s' % semspace_path)
             load_semspace(semspace_path, semspace_format)
             print('Semantic space loaded.')
+
+            if multiple_spaces:
+                semspace_path_img = conf.get('semantic_space', 'preload_space_file_img')
+
+                print('Pre-loading image space: %s' % semspace_path_img)
+                load_semspace(semspace_path_img, semspace_format)
+                print('Semantic space loaded.')
+
+                semspace_path_proto = conf.get('semantic_space', 'preload_space_file_proto')
+
+                print('Pre-loading semantic prototypes space: %s' % semspace_path_proto)
+                load_semspace(semspace_path_proto, semspace_format)
+                print('Semantic space loaded.')
 
             return True
         else:
