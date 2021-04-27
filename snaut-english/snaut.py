@@ -423,30 +423,45 @@ def app_factory(conf, init_semspace=None):
         data = json.loads(request.form['data'])
         metric = data['metric']
         words_1 = data['words1']
+        vec_space = data['vecSpace']
 
         if 'words2' not in data:
             if check_matrix_size(semspace, words_1):
-                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type='proto')
+                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type=vec_space)
 
                 if not words_1_ok:
                     return make_response(
                         "No valid elements in the list!")
 
-                most_similar = semspace.all_distances(words_1_ok, metric=metric)
+                if vec_space == 'normal':
+                    most_similar = semspace.all_distances(words_1_ok, metric=metric)
+                elif vec_space == 'img':
+                    most_similar = semspace2.all_distances(words_1_ok, metric=metric)
+                elif vec_space == 'proto':
+                    most_similar = semspace3.all_distances(words_1_ok, metric=metric)
             else:
                 return make_response("Matrix size error!")
         else:
             words_2 = data['words2']
             if check_matrix_size(semspace, words_1, words_2):
-                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type = 'proto')
-                (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type = 'proto')
+                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type = vec_space)
+                (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type = vec_space)
 
                 if not words_1_ok or not words_2_ok:
                     return make_response(
                         "No valid elements in one of the lists!")
 
-                most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
-                                                         metric=metric)
+                if vec_space == 'normal':
+                    most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
+                                                             metric=metric)
+                elif vec_space == 'img':
+                    most_similar = semspace2.matrix_distances(words_1_ok, words_2_ok,
+                                                    metric=metric)
+                elif vec_space == 'proto':
+                    most_similar = semspace3.matrix_distances(words_1_ok, words_2_ok,
+                                                             metric=metric)
+
+
             else:
                 return make_response("Matrix size error!")
 
