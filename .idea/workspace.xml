@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="200cb0f9-9d40-4baf-b39c-f1e0665ee1a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.ini" afterPath="$PROJECT_DIR$/config.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/snaut.py" afterPath="$PROJECT_DIR$/snaut-english/snaut.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" afterPath="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/templates/index.html" afterPath="$PROJECT_DIR$/snaut-english/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
+            <state relative-caret-position="230">
+              <caret line="92" column="77" lean-forward="false" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="77" />
               <folding>
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -41,8 +41,8 @@
       <file leaf-file-name="snaut.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snaut-english/snaut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1511">
-              <caret line="318" column="64" lean-forward="true" selection-start-line="318" selection-start-column="64" selection-end-line="318" selection-end-column="64" />
+            <state relative-caret-position="291">
+              <caret line="399" column="73" lean-forward="false" selection-start-line="399" selection-start-column="73" selection-end-line="399" selection-end-column="73" />
               <folding>
                 <element signature="e#115#124#0" expanded="true" />
               </folding>
@@ -53,7 +53,7 @@
       <file leaf-file-name="space.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/utils/space.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
+            <state relative-caret-position="1107">
               <caret line="167" column="26" lean-forward="false" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="26" />
               <folding>
                 <element signature="e#60#78#0" expanded="true" />
@@ -66,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/config.ini">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+              <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -87,8 +87,8 @@
       <file leaf-file-name="snaut.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4455">
-              <caret line="297" column="14" lean-forward="false" selection-start-line="297" selection-start-column="14" selection-end-line="297" selection-end-column="14" />
+            <state relative-caret-position="231">
+              <caret line="330" column="42" lean-forward="false" selection-start-line="330" selection-start-column="42" selection-end-line="330" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -105,36 +105,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>metrics</find>
-      <find>cityblock</find>
-      <find>manhattan</find>
-      <find>vector spa</find>
-      <find>one wor</find>
-      <find>submis</find>
-      <find>vector space</find>
-      <find>snaut</find>
-      <find>go!</find>
-      <find>country</find>
-      <find>$</find>
-      <find>ready</find>
-      <find>init</find>
-      <find>typeahead</find>
       <find>countries</find>
       <find>minLength</find>
       <find>scroll</find>
       <find>10</find>
       <find>semantic_space</find>
       <find>semanticSpace</find>
-      <find>metric</find>
-      <find>semspace</find>
       <find>cosine</find>
       <find>prototype</find>
-      <find>load</find>
       <find>preload_space</find>
       <find>vector</find>
       <find>all_distances</find>
+      <find>load</find>
       <find>pairwise</find>
+      <find>global</find>
+      <find>status</find>
+      <find>status_dict</find>
+      <find>pairMetricId</find>
+      <find>most_similar</find>
+      <find>semspace</find>
+      <find>split_by_defined</find>
       <find>pairwise_distances</find>
+      <find>pairwise-metric</find>
+      <find>compare with</find>
+      <find>selectpicker</find>
+      <find>metric</find>
+      <find>make_response</find>
+      <find>pairmetricid</find>
+      <find>matrix-metric</find>
+      <find>explore-metric</find>
+      <find>pairvecspaceid</find>
     </findStrings>
     <replaceStrings>
       <replace>$PROJECT_DIR$/snaut/static/</replace>
@@ -159,21 +159,21 @@
         <option value="$PROJECT_DIR$/data/quoted_prototype_labels_new.txt" />
         <option value="$PROJECT_DIR$/snaut-english/static/css/snaut.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" />
         <option value="$PROJECT_DIR$/snaut-english/utils/space_io.py" />
         <option value="$PROJECT_DIR$/snaut-english/utils/space_utils.py" />
         <option value="$PROJECT_DIR$/snaut-english/utils/space.py" />
-        <option value="$PROJECT_DIR$/snaut-english/templates/index.html" />
         <option value="$PROJECT_DIR$/data/vector_code.py" />
         <option value="$PROJECT_DIR$/data/all_vectors_300.txt" />
-        <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/snaut-english/snaut.py" />
+        <option value="$PROJECT_DIR$/config.ini" />
+        <option value="$PROJECT_DIR$/snaut-english/templates/index.html" />
+        <option value="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="222" />
-    <option name="y" value="23" />
+    <option name="x" value="539" />
+    <option name="y" value="22" />
     <option name="width" value="1311" />
     <option name="height" value="877" />
   </component>
@@ -380,14 +380,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="222" y="23" width="1311" height="877" extended-state="0" />
+    <frame x="539" y="22" width="1311" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2921434" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43602484" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2795031" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -659,29 +659,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/snaut-english/utils/space.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="167" column="26" lean-forward="false" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="26" />
+          <folding>
+            <element signature="e#60#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
+          <caret line="3" column="37" lean-forward="false" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4455">
-          <caret line="297" column="14" lean-forward="false" selection-start-line="297" selection-start-column="14" selection-end-line="297" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="35" lean-forward="false" selection-start-line="99" selection-start-column="35" selection-end-line="99" selection-end-column="35" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -695,20 +687,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/utils/space.py">
+    <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="167" column="26" lean-forward="false" selection-start-line="167" selection-start-column="8" selection-end-line="167" selection-end-column="26" />
+        <state relative-caret-position="230">
+          <caret line="92" column="77" lean-forward="false" selection-start-line="92" selection-start-column="63" selection-end-line="92" selection-end-column="77" />
           <folding>
-            <element signature="e#60#78#0" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="330" column="42" lean-forward="false" selection-start-line="330" selection-start-column="42" selection-end-line="330" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snaut-english/snaut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1511">
-          <caret line="318" column="64" lean-forward="true" selection-start-line="318" selection-start-column="64" selection-end-line="318" selection-end-column="64" />
+        <state relative-caret-position="291">
+          <caret line="399" column="73" lean-forward="false" selection-start-line="399" selection-start-column="73" selection-end-line="399" selection-end-column="73" />
           <folding>
             <element signature="e#115#124#0" expanded="true" />
           </folding>

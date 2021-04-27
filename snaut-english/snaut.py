@@ -33,6 +33,8 @@ from utils.space import SemanticSpace
 # a semspace is loaded when starting the server and never changes later.
 #
 semspace = None
+semspace2 = None
+semspace3 = None
 
 # def app_factory(conf, init_semspace=None):
 #     """Return the flask app based on the configuration."""
@@ -127,19 +129,40 @@ def app_factory(conf, init_semspace=None):
 
         return decorated_log_data
 
-    def load_semspace(semspace_path, semspace_format='semspace'):
+    def load_semspace(semspace_path, semspace_format='semspace', semspace_type='normal'):
         """Load a semantic space based on the path and format."""
 
         global semspace
+        global semspace2
+        global semspace3
 
         if semspace_format == 'ssmarket':
             semspace = SemanticSpace.from_ssmarket(semspace_path,
                                                    prenorm=prenormalize)
+            if semspace_type =='normal':
+                semspace = SemanticSpace.from_ssmarket(semspace_path,
+                                                  prenorm=prenormalize)
+            elif semspace_type =='img':
+                semspace2 = SemanticSpace.from_ssmarket(semspace_path,
+                                                  prenorm=prenormalize)
+            elif semspace_type =='proto':
+                semspace3 = SemanticSpace.from_ssmarket(semspace_path,
+                                                  prenorm=prenormalize)
             return True
         elif semspace_format == 'csv':
-            semspace = SemanticSpace.from_csv(semspace_path,
-                                              prenorm=prenormalize,
-                                              dtype=numpy_dtype)
+            if semspace_type =='normal':
+                semspace = SemanticSpace.from_csv(semspace_path,
+                                                  prenorm=prenormalize,
+                                                  dtype=numpy_dtype)
+            elif semspace_type =='img':
+                semspace2 = SemanticSpace.from_csv(semspace_path,
+                                                  prenorm=prenormalize,
+                                                  dtype=numpy_dtype)
+            elif semspace_type =='proto':
+                semspace3 = SemanticSpace.from_csv(semspace_path,
+                                                  prenorm=prenormalize,
+                                                  dtype=numpy_dtype)
+
             return True
         else:
             raise Exception("Space format '%s' unknown!" % semspace_format)
@@ -159,13 +182,13 @@ def app_factory(conf, init_semspace=None):
                 semspace_path_img = conf.get('semantic_space', 'preload_space_file_img')
 
                 print('Pre-loading image space: %s' % semspace_path_img)
-                load_semspace(semspace_path_img, semspace_format)
+                load_semspace(semspace_path_img, semspace_format, semspace_type='img')
                 print('Semantic space loaded.')
 
                 semspace_path_proto = conf.get('semantic_space', 'preload_space_file_proto')
 
                 print('Pre-loading semantic prototypes space: %s' % semspace_path_proto)
-                load_semspace(semspace_path_proto, semspace_format)
+                load_semspace(semspace_path_proto, semspace_format, semspace_type='proto')
                 print('Semantic space loaded.')
 
             return True
@@ -188,7 +211,7 @@ def app_factory(conf, init_semspace=None):
 
         return spaces
 
-    def split_by_defined(words):
+    def split_by_defined(words, semspace_type = 'proto'):
         """Split a list of words based on whether they are in the space."""
 
         defined = []
@@ -196,10 +219,22 @@ def app_factory(conf, init_semspace=None):
 
         for w in words:
             x = [word.upper() for word in w]
-            if semspace.defined_at(x):
-                defined.append(x)
-            else:
-                undefined.append(x)
+            if semspace_type == 'normal':
+                if semspace.defined_at(x):
+                    defined.append(x)
+                else:
+                    undefined.append(x)
+            elif semspace_type == 'img':
+                if semspace2.defined_at(x):
+                    defined.append(x)
+                else:
+                    undefined.append(x)
+            elif semspace_type == 'proto':
+                if semspace3.defined_at(x):
+                    defined.append(x)
+                else:
+                    undefined.append(x)
+
 
         return defined, undefined
 
@@ -335,18 +370,35 @@ def app_factory(conf, init_semspace=None):
         metric = data['metric']
         n = data.get('n', 10)
         words_1 = data['words1']
+        vec_space = data['vecSpace']
 
-        (words_1_ok, words_1_nd) = split_by_defined(words_1)
+        (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type = vec_space)
 
         if 'words2' not in data:
             words_2_nd = None
-            most_similar = semspace.most_similar(words_1_ok,
-                                                 n=n, metric=metric)
+            if vec_space == 'normal':
+                most_similar = semspace.most_similar(words_1_ok,
+                                                     n=n, metric=metric)
+            elif vec_space == 'img':
+                most_similar = semspace2.most_similar(words_1_ok,
+                                                     n=n, metric=metric)
+            elif vec_space == 'proto':
+                most_similar = semspace3.most_similar(words_1_ok,
+                                                     n=n, metric=metric)
+
         else:
             words_2 = data['words2']
-            (words_2_ok, words_2_nd) = split_by_defined(words_2)
-            most_similar = semspace.most_similar(words_1_ok, words_2_ok,
-                                                 n=n, metric=metric)
+            (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type = vec_space)
+
+            if vec_space == 'normal':
+                most_similar = semspace.most_similar(words_1_ok, words_2_ok,
+                                                     n=n, metric=metric)
+            elif vec_space == 'img':
+                most_similar = semspace2.most_similar(words_1_ok, words_2_ok,
+                                                     n=n, metric=metric)
+            elif vec_space == 'proto':
+                most_similar = semspace3.most_similar(words_1_ok, words_2_ok,
+                                                     n=n, metric=metric)
 
         result = {'similarities': most_similar,
                   'notDefined': {'words1': words_1_nd, 'words2': words_2_nd}}
@@ -374,7 +426,7 @@ def app_factory(conf, init_semspace=None):
 
         if 'words2' not in data:
             if check_matrix_size(semspace, words_1):
-                (words_1_ok, words_1_nd) = split_by_defined(words_1)
+                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type='proto')
 
                 if not words_1_ok:
                     return make_response(
@@ -386,8 +438,8 @@ def app_factory(conf, init_semspace=None):
         else:
             words_2 = data['words2']
             if check_matrix_size(semspace, words_1, words_2):
-                (words_1_ok, words_1_nd) = split_by_defined(words_1)
-                (words_2_ok, words_2_nd) = split_by_defined(words_2)
+                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type = 'proto')
+                (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type = 'proto')
 
                 if not words_1_ok or not words_2_ok:
                     return make_response(
@@ -423,8 +475,8 @@ def app_factory(conf, init_semspace=None):
         metric = data['metric']
         n = data.get('n', 10)
 
-        (positive_ok, positive_nd) = split_by_defined(positive)
-        (negative_ok, negative_nd) = split_by_defined(negative)
+        (positive_ok, positive_nd) = split_by_defined(positive, semspace_type = 'proto')
+        (negative_ok, negative_nd) = split_by_defined(negative, semspace_type = 'proto')
 
         closest = semspace.offset(positive_ok, negative_ok,
                                   metric=metric, n=n, filter_used=True)
@@ -494,7 +546,7 @@ def app_factory(conf, init_semspace=None):
         data = request.get_json()
 
         if 'words' in data:
-            (available, not_available) = split_by_defined(data['words'])
+            (available, not_available) = split_by_defined(data['words'], semspace_type = 'proto')
             response = jsonify({'available': available,
                                 'notAvailable': not_available})
         else:

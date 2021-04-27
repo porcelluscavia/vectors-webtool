@@ -90,14 +90,19 @@
 		    </div>
 		    <div class="form-group">
 		      <label for="explore-single-input">Distance:</label>
-		      <select class="selectpicker metrics-options" id="explore-metric"></select>
+		      <select class="selectpicker metrics-options" id="explore-metric">
+				<option value="cosine" selected>cosine distance</option>
+		      <option value="euclidean">euclidean</option>
+		      <option value="manhattan">manhattan</option>
+				<option value="cosine_sim">cosine similarity</option>
+				  </select>
 		    </div>
 			  <div class="form-group">
 		      <label for="explore-single-input">Vector Space:</label>
-		      <select class="selectpicker" id="vector-metric1">
-				  <option value="prototypes" selected>prototypes</option>
-				  <option value="both">both prototypes and images</option>
-		      <option value="images">individual images</option>
+		      <select class="selectpicker" id="pairwise-vecspace">
+				  <option value="proto" selected>prototypes</option>
+				  <option value="normal">both prototypes and images</option>
+		      <option value="img">individual images</option>
 		    </select>
 
 		    </div>
