@@ -403,7 +403,89 @@ def app_factory(conf, init_semspace=None):
         result = {'similarities': most_similar,
                   'notDefined': {'words1': words_1_nd, 'words2': words_2_nd}}
 
+
         return jsonify(result)
+
+    @app.route('%s/similar_csv/' % root_prefix, methods=['POST'])
+    @log_data
+    def similar_csv():
+        """Return most similar words.
+
+        Takes a json with the following fields:
+
+        * words1 - reference list of words
+        * metric - metric which should be used when calculating
+                    distances
+        * n (optional; default: 10) - number of neighbours to be
+                    returned
+        * words2 (optional) - words which can be included in the
+                    result, if not given all words in the space will be used
+
+        Returns json with:
+
+        * similarities - dictionary with reference words as keys and
+            list of neighbours with their distances as values
+        * notDefined:
+            words1 - words in words1 that are not defined in the space
+            words2 - words in words2 that are not defined in the space
+        """
+
+        data = request.get_json()
+
+        metric = data['metric']
+        n = data.get('n', 10)
+        words_1 = data['words1']
+        vec_space = data['vecSpace']
+
+        (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type=vec_space)
+
+        if 'words2' not in data:
+            words_2_nd = None
+            if vec_space == 'normal':
+                most_similar = semspace.most_similar(words_1_ok,
+                                                     n=n, metric=metric)
+            elif vec_space == 'img':
+                most_similar = semspace2.most_similar(words_1_ok,
+                                                      n=n, metric=metric)
+            elif vec_space == 'proto':
+                most_similar = semspace3.most_similar(words_1_ok,
+                                                      n=n, metric=metric)
+
+        else:
+            words_2 = data['words2']
+            (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type=vec_space)
+
+            if vec_space == 'normal':
+                most_similar = semspace.most_similar(words_1_ok, words_2_ok,
+                                                     n=n, metric=metric)
+            elif vec_space == 'img':
+                most_similar = semspace2.most_similar(words_1_ok, words_2_ok,
+                                                      n=n, metric=metric)
+            elif vec_space == 'proto':
+                most_similar = semspace3.most_similar(words_1_ok, words_2_ok,
+                                                      n=n, metric=metric)
+
+
+        s = io.BytesIO()
+
+        writer = csv.writer(s)
+        writer.writerow("hi!")
+        for word, val in most_similar.items():
+            writer.writerow([word, val])
+
+        # for w1, w2 in word_pairs:
+        #     w1 = [word.upper() for word in w1]
+        #     w2 = [word.upper() for word in w2]
+        #     if semspace.defined_at(w1) & semspace.defined_at(w2):
+        #         dist = semspace.pair_distance(w1, w2, metric)
+        #         w1_label = ' '.join(w1)
+        #         w2_label = ' '.join(w2)
+        #         writer.writerow([w1_label, w2_label, dist])
+        response = make_response(s.getvalue())
+        response.headers["Content-Disposition"] = (
+            "attachment; filename=neighbours.csv")
+
+        return response
 
     @app.route('%s/similarity-matrix/' % root_prefix, methods=['POST'])
     @log_data
@@ -436,10 +518,10 @@ def app_factory(conf, init_semspace=None):
 
                 if vec_space == 'normal':
                     most_similar = semspace.all_distances(words_1_ok, metric=metric)
-                elif vec_space == 'img':
-                    most_similar = semspace2.all_distances(words_1_ok, metric=metric)
-                elif vec_space == 'proto':
-                    most_similar = semspace3.all_distances(words_1_ok, metric=metric)
+                # elif vec_space == 'img':
+                #     most_similar = semspace2.all_distances(words_1_ok, metric=metric)
+                # elif vec_space == 'proto':
+                #     most_similar = semspace3.all_distances(words_1_ok, metric=metric)
             else:
                 return make_response("Matrix size error!")
         else:
@@ -454,16 +536,6 @@ def app_factory(conf, init_semspace=None):
                 # this needs to be changed to just semspace, I believe
                 most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
                                                          metric=metric)
-                # if vec_space == 'both':
-                #     most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
-                #                                              metric=metric)
-                # elif vec_space == 'images':
-                #     most_similar = semspace2.matrix_distances(words_1_ok, words_2_ok,
-                #                                     metric=metric)
-                # elif vec_space == 'proto':
-                #     most_similar = semspace3.matrix_distances(words_1_ok, words_2_ok,
-                #                                              metric=metric)
-
 
             else:
                 return make_response("Matrix size error!")

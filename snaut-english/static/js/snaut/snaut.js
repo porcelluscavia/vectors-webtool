@@ -375,12 +375,14 @@
       } else if (targetSwitch === 'same') {
         data['words2'] = words1;
         data['vecSpace'] = 'normal';
-      } else if (targetSwitch === 'proto') {
-        data['vecSpace'] = 'proto';
       }
-      else if (targetSwitch === 'img') {
-        data['vecSpace'] = 'img';
-      } else if (targetSwitch === 'normal') {
+//      else if (targetSwitch === 'proto') {
+//        data['vecSpace'] = 'proto';
+//      }
+//      else if (targetSwitch === 'img') {
+//        data['vecSpace'] = 'img';
+//      }
+      else if (targetSwitch === 'normal') {
         data['vecSpace'] = 'normal';
       }
       return data;
