@@ -361,17 +361,27 @@
     }
 
     MatrixForm.prototype.collect = function() {
-      var data, targetSwitch, words1;
+      var data, targetSwitch, words1, vecSpace;
       words1 = parseLines($(matrixReflistId).val());
       data = {
         metric: $(matrixMetricId).val(),
-        words1: words1
+        words1: words1,
+        vecSpace: 'hi'
       };
       targetSwitch = $(matrixTargetSwitchId).val();
       if (targetSwitch === 'list') {
         data['words2'] = parseLines($(matrixTargetlistId).val());
+        data['vecSpace'] = 'normal';
       } else if (targetSwitch === 'same') {
         data['words2'] = words1;
+        data['vecSpace'] = 'normal';
+      } else if (targetSwitch === 'proto') {
+        data['vecSpace'] = 'proto';
+      }
+      else if (targetSwitch === 'img') {
+        data['vecSpace'] = 'img';
+      } else if (targetSwitch === 'normal') {
+        data['vecSpace'] = 'normal';
       }
       return data;
     };

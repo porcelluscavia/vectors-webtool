@@ -160,8 +160,10 @@
 		<div class="col-md-4">
 		  <label for="matrix-targetswitch">Compare with:</label>
 		  <select class="selectpicker" id="matrix-targetswitch">
-		    <option value="same">same words</option>
-		    <option value="all" selected>all other words</option>
+		    <option value="same" selected>same words</option>
+			  <option value="proto">all prototypes</option>
+			  <option value="img">all images</option>
+			  <option value="normal">all prototypes and images</option>
 		    <option value="list">words from a second list</option>
 		  </select>
 		</div>
@@ -305,7 +307,7 @@
     <!--</div>-->
 
 <div id="scrollable-dropdown-menu">
-  <input class="typeahead" type="text" placeholder="Countries" autocomplete="off" spellcheck="false">
+  <input class="typeahead" type="text" placeholder="Select a prototype to see image gallery" autocomplete="off" spellcheck="false">
 </div>
 
 
@@ -517,6 +519,7 @@
 	<h4 class="modal-title" id="space-modal-title">Modal title</h4>
       </div>
       <div id="space-modal-desc" class="modal-body">
+		  hi
       </div>
       <div class="modal-footer">
 	<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

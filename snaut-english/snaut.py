@@ -211,8 +211,8 @@ def app_factory(conf, init_semspace=None):
 
         return spaces
 
-    def split_by_defined(words, semspace_type = 'proto'):
-        """Split a list of words based on whether they are in the space."""
+    def split_by_defined(words, semspace_type = 'normal'):
+        """Split a list of words based on whether they are in the space. Multiple space support not really needed here."""
 
         defined = []
         undefined = []
@@ -424,10 +424,11 @@ def app_factory(conf, init_semspace=None):
         metric = data['metric']
         words_1 = data['words1']
         vec_space = data['vecSpace']
+        make_response(vec_space)
 
         if 'words2' not in data:
             if check_matrix_size(semspace, words_1):
-                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type=vec_space)
+                (words_1_ok, words_1_nd) = split_by_defined(words_1)
 
                 if not words_1_ok:
                     return make_response(
@@ -444,22 +445,24 @@ def app_factory(conf, init_semspace=None):
         else:
             words_2 = data['words2']
             if check_matrix_size(semspace, words_1, words_2):
-                (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type = vec_space)
-                (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type = vec_space)
+                (words_1_ok, words_1_nd) = split_by_defined(words_1)
+                (words_2_ok, words_2_nd) = split_by_defined(words_2)
 
                 if not words_1_ok or not words_2_ok:
                     return make_response(
                         "No valid elements in one of the lists!")
-
-                if vec_space == 'normal':
-                    most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
-                                                             metric=metric)
-                elif vec_space == 'img':
-                    most_similar = semspace2.matrix_distances(words_1_ok, words_2_ok,
-                                                    metric=metric)
-                elif vec_space == 'proto':
-                    most_similar = semspace3.matrix_distances(words_1_ok, words_2_ok,
-                                                             metric=metric)
+                # this needs to be changed to just semspace, I believe
+                most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
+                                                         metric=metric)
+                # if vec_space == 'both':
+                #     most_similar = semspace.matrix_distances(words_1_ok, words_2_ok,
+                #                                              metric=metric)
+                # elif vec_space == 'images':
+                #     most_similar = semspace2.matrix_distances(words_1_ok, words_2_ok,
+                #                                     metric=metric)
+                # elif vec_space == 'proto':
+                #     most_similar = semspace3.matrix_distances(words_1_ok, words_2_ok,
+                #                                              metric=metric)
 
 
             else:
@@ -490,8 +493,8 @@ def app_factory(conf, init_semspace=None):
         metric = data['metric']
         n = data.get('n', 10)
 
-        (positive_ok, positive_nd) = split_by_defined(positive, semspace_type = 'proto')
-        (negative_ok, negative_nd) = split_by_defined(negative, semspace_type = 'proto')
+        (positive_ok, positive_nd) = split_by_defined(positive)
+        (negative_ok, negative_nd) = split_by_defined(negative)
 
         closest = semspace.offset(positive_ok, negative_ok,
                                   metric=metric, n=n, filter_used=True)
