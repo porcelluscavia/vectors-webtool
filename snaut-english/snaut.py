@@ -406,7 +406,7 @@ def app_factory(conf, init_semspace=None):
 
         return jsonify(result)
 
-    @app.route('%s/similar_csv/' % root_prefix, methods=['POST'])
+    @app.route('%s/similar-csv/' % root_prefix, methods=['POST'])
     @log_data
     def similar_csv():
         """Return most similar words.
@@ -465,22 +465,13 @@ def app_factory(conf, init_semspace=None):
                 most_similar = semspace3.most_similar(words_1_ok, words_2_ok,
                                                       n=n, metric=metric)
 
-
         s = io.BytesIO()
 
         writer = csv.writer(s)
-        writer.writerow("hi!")
-        for word, val in most_similar.items():
-            writer.writerow([word, val])
-
-        # for w1, w2 in word_pairs:
-        #     w1 = [word.upper() for word in w1]
-        #     w2 = [word.upper() for word in w2]
-        #     if semspace.defined_at(w1) & semspace.defined_at(w2):
-        #         dist = semspace.pair_distance(w1, w2, metric)
-        #         w1_label = ' '.join(w1)
-        #         w2_label = ' '.join(w2)
-        #         writer.writerow([w1_label, w2_label, dist])
+        writer.writerow(['word_1', 'word_2', 'distance'])
+        # for word, val in most_similar.items():
+        #     writer.writerow([word, val])
+        #
         response = make_response(s.getvalue())
         response.headers["Content-Disposition"] = (
             "attachment; filename=neighbours.csv")
