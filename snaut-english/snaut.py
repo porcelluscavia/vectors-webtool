@@ -664,7 +664,8 @@ if __name__ == '__main__':
         conf.read([sys.argv[1]])
     else:
         # conf.read(['config.ini', 'config_local.ini'])
-        conf.read(['/Users/samski/Downloads/snaut-master/config.ini'])
+        # conf.read(['/Users/samski/Downloads/snaut-master/config.ini'])
+        conf.read(['../config.ini'])
 
     server_host = conf.get('server_local', 'host')
     server_port = conf.getint('server_local', 'port')
