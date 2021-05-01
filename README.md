@@ -4,7 +4,7 @@ Dr. Fritz's Vector Site
 Interface for exploring semantic spaces.  The interface can be run either
 locally or as a web server. 
 
-If you wish to modify this code, it's helpful to have a decent understanding of Python, HTML, CSS. A basic understanding of APIs and making websites is also handy. Familiarity with the Python libraries Pandas, Flask, and scikit-learn can be helpful.
+If you wish to modify this code, it's helpful to have a decent understanding of Python, HTML, CSS. A basic understanding of APIs and making websites (Model View Controller architectures) is also handy. Familiarity with the Python libraries Pandas, Flask, and scikit-learn can be helpful.
 
 You'll probably seek to modify one of the following files:
 - **space.py, space_io.py, space_utils.py** - several utility classes that handle taking in and storing a vector space file. Each vector file becomes an object called a Semspace. The Semspace class contains a number of functions to perform our desired distance calculations (e.g. nearest neighbors, pairwise, etc.) and return results as Pandas dataframes. The actual distance calculations are performed with scikit-learn.
