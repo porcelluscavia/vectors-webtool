@@ -80,13 +80,15 @@
 		    <label for="explore-single-input">Words/phrases:</label>
 		    <textarea id="explore-single-input" placeholder="One word or phrase per line (not case sensitive)" class="form-control no-resize" rows="4"></textarea>
 		  </div>
+						  <form action='/similar-csv/' method="POST" id="csv-form">
+		      <button class="btn btn-danger" type="submit" id="explore-csv-go" value="csv">Make a csv</button>
+		    </form>
+
 		  <div class="form-inline">
 		    <div class="form-group">
 		      <button class="btn btn-danger" type="button" id="explore-single-go" value="calculate">Calculate</button>
 		    </div>
-			  <div class="form-group">
-		      <button class="btn btn-danger" type="button" id="explore-csv-go" onclick = "", value="csv">Make a csv</button>
-		    </div>
+
 		    <div class="form-group">
 		      <label for="explore-number">Neighbours:</label>
 		      <input type="text" id="explore-number" value="10" class="form-control small-input">
@@ -323,54 +325,44 @@
 </div>
 
 
-<!--<div class='result'></div>-->
-<!--<button id="follow" onclick="ajax_follow()">Add</button>-->
-<p id="response" name="response">text</p>
-
-				  <!-- /input-group -->
-				  				      <!--<div class="bs-example">-->
-		<!--<h2>Type your favorite car name</h2>-->
-        <!--<input type="text" class="typeahead tt-query" autocomplete="off" spellcheck="false">-->
-    <!--</div>-->
-
 				  <div class="row top-buffer">
 					  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 <div class="hi">
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+      <h4 class="panel-title" >
+        <a id = "box-title" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           CASTLE
         </a>
       </h4>
     </div>
 
     <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body scrollable-panel">
+      <div class="panel-body scrollable-panel" id="panel-body">
 		    <button type="button" class="btn btn-default">CASTLE_000Q</button>
 		  <button type="button" class="btn btn-default">CASTLE_001</button>
 		  <button type="button" class="btn btn-default">CASTLE_002</button>
 		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
 		  <button type="button" class="btn btn-default">CASTLE_004</button>
 		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_000Q</button>
-		  <button type="button" class="btn btn-default">CASTLE_001</button>
-		  <button type="button" class="btn btn-default">CASTLE_002</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
-		  <button type="button" class="btn btn-default">CASTLE_004</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
-		  <button type="button" class="btn btn-default">CASTLE_000Q</button>
-		  <button type="button" class="btn btn-default">CASTLE_001</button>
-		  <button type="button" class="btn btn-default">CASTLE_002</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
-		  <button type="button" class="btn btn-default">CASTLE_004</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
-		  <button type="button" class="btn btn-default">CASTLE_000Q</button>
-		  <button type="button" class="btn btn-default">CASTLE_001</button>
-		  <button type="button" class="btn btn-default">CASTLE_002</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
-		  <button type="button" class="btn btn-default">CASTLE_004</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_006</button>
+		  <button type="button" class="btn btn-default">CASTLE_007</button>
+		  <button type="button" class="btn btn-default">CASTLE_008</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_009</button>
+		  <button type="button" class="btn btn-default">CASTLE_010</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_011</button>
+		  <button type="button" class="btn btn-default">CASTLE_012</button>
+		  <button type="button" class="btn btn-default">CASTLE_013</button>
+		  <button type="button" class="btn btn-default">CASTLE_014</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_015</button>
+		  <button type="button" class="btn btn-default">CASTLE_016</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_017</button>
+		  <button type="button" class="btn btn-default">CASTLE_018</button>
+		  <button type="button" class="btn btn-default">CASTLE_019</button>
+		  <button type="button" class="btn btn-default">CASTLE_020</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_021</button>
+		  <button type="button" class="btn btn-default">CASTLE_022</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_023</button>
 
       </div>
     </div>
@@ -384,7 +376,7 @@
     <div class="thumbnail">
       <img src="static/images/CASTLE_003.JPEG" alt="...">
       <div class="caption">
-        <h3>CASTLE_003</h3>
+        <h3 id="picture-title">CASTLE_003</h3>
         <p>Copy the name of this picture by clicking on the button below!</p>
         <p><a href="#" class="btn btn-primary" role="button">Copy</a> </p>
       </div>
@@ -504,6 +496,28 @@
           <!--integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="-->
           <!--crossorigin="anonymous"></script>-->
 
+	    <script type="text/javascript">
+    $(document).on('submit','#csv-form',function(e)
+                   {
+      console.log('hello');
+      e.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/similar-csv/',
+        data:{
+          words1: $("#explore-single-input").val();
+
+        },
+        success:function(data)
+        {
+          alert('saved');
+
+
+        }
+      })
+    });
+  </script>
+
   <script type="text/javascript">
     $(document).on('submit','#todo-form',function(e)
                    {
@@ -518,8 +532,44 @@
         success:function(data)
         {
           <!--alert('saved');-->
-          $('#response').html(data['word']);
-		<!--$("#response").replaceWith(data);-->
+          $('#box-title').text(data['word']);
+          $('#panel-body').html('<button id="button1" type="button" class="btn btn-default">' + data['word'] + '_001 </button>' +
+          '<button id="button1" type="button" class="btn btn-default">' + data['word'] + '_002 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_003 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_004 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_005 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_006 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_007 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_008 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_009 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_010 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_011 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_012 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_013 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_014 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_015 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_016 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_017 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_018 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_019 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_020 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_021 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_022 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_023 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_024 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_025 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_026 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_027 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_028 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_029 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_030 </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_000Q </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_025Q </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_050Q </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_075Q </button>' +
+          '<button type="button" class="btn btn-default">' + data['word'] + '_100Q </button>');
+          $('#picture-title').text(data['word']);
+
         }
       })
     });

@@ -36,35 +36,7 @@ semspace = None
 semspace2 = None
 semspace3 = None
 
-# def app_factory(conf, init_semspace=None):
-#     """Return the flask app based on the configuration."""
-#
-#     root_prefix = conf.get('server', 'root_prefix')
-#     static_url = "%s/static" % root_prefix
-#
-#     static_dir = os.path.abspath(conf.get('server', 'static_dir'))
-#     template_dir = os.path.abspath(conf.get('server', 'template_dir'))
-#
-#     doc_dir = os.path.abspath(conf.get('server', 'doc_dir'))
-#
-#     app = Flask(__name__,
-#                 static_folder=static_dir,
-#                 template_folder=template_dir,
-#                 static_url_path=static_url)
-#
-#     log_name = conf.get('server', 'log_name')
-#     log_file = conf.get('server', 'log_file')
-#     log_level = conf.get('server', 'log_level')
-#
-#     logger = get_logger(log_name, log_file, log_level)
-#
-#     semspaces_dir = conf.get('semantic_space', 'semspaces_dir')
-#     prenormalize = conf.getboolean('semantic_space', 'prenormalize')
-#     matrix_size_limit = conf.getint('semantic_space', 'matrix_size_limit')
-#     numpy_dtype = conf.get('semantic_space', 'numpy_dtype')
-#     allow_space_change = conf.getboolean('semantic_space', 'allow_space_change')
-#
-#     preload_space = conf.getboolean('semantic_space', 'preload_space')
+
 
 def app_factory(conf, init_semspace=None):
     """Return the flask app based on the configuration."""
@@ -406,6 +378,8 @@ def app_factory(conf, init_semspace=None):
 
         return jsonify(result)
 
+    # on button press, do this!
+
     @app.route('%s/similar-csv/' % root_prefix, methods=['POST'])
     @log_data
     def similar_csv():
@@ -431,39 +405,40 @@ def app_factory(conf, init_semspace=None):
         """
 
         data = request.get_json()
+        word = data['words1']
 
-        metric = data['metric']
-        n = data.get('n', 10)
-        words_1 = data['words1']
-        vec_space = data['vecSpace']
-
-        (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type=vec_space)
-
-        if 'words2' not in data:
-            words_2_nd = None
-            if vec_space == 'normal':
-                most_similar = semspace.most_similar(words_1_ok,
-                                                     n=n, metric=metric)
-            elif vec_space == 'img':
-                most_similar = semspace2.most_similar(words_1_ok,
-                                                      n=n, metric=metric)
-            elif vec_space == 'proto':
-                most_similar = semspace3.most_similar(words_1_ok,
-                                                      n=n, metric=metric)
-
-        else:
-            words_2 = data['words2']
-            (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type=vec_space)
-
-            if vec_space == 'normal':
-                most_similar = semspace.most_similar(words_1_ok, words_2_ok,
-                                                     n=n, metric=metric)
-            elif vec_space == 'img':
-                most_similar = semspace2.most_similar(words_1_ok, words_2_ok,
-                                                      n=n, metric=metric)
-            elif vec_space == 'proto':
-                most_similar = semspace3.most_similar(words_1_ok, words_2_ok,
-                                                      n=n, metric=metric)
+        # metric = data['metric']
+        # n = data.get('n', 10)
+        # words_1 = data['words1']
+        # vec_space = data['vecSpace']
+        #
+        # (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type=vec_space)
+        #
+        # if 'words2' not in data:
+        #     words_2_nd = None
+        #     if vec_space == 'normal':
+        #         most_similar = semspace.most_similar(words_1_ok,
+        #                                              n=n, metric=metric)
+        #     elif vec_space == 'img':
+        #         most_similar = semspace2.most_similar(words_1_ok,
+        #                                               n=n, metric=metric)
+        #     elif vec_space == 'proto':
+        #         most_similar = semspace3.most_similar(words_1_ok,
+        #                                               n=n, metric=metric)
+        #
+        # else:
+        #     words_2 = data['words2']
+        #     (words_2_ok, words_2_nd) = split_by_defined(words_2, semspace_type=vec_space)
+        #
+        #     if vec_space == 'normal':
+        #         most_similar = semspace.most_similar(words_1_ok, words_2_ok,
+        #                                              n=n, metric=metric)
+        #     elif vec_space == 'img':
+        #         most_similar = semspace2.most_similar(words_1_ok, words_2_ok,
+        #                                               n=n, metric=metric)
+        #     elif vec_space == 'proto':
+        #         most_similar = semspace3.most_similar(words_1_ok, words_2_ok,
+        #                                               n=n, metric=metric)
 
         s = io.BytesIO()
 
@@ -635,13 +610,7 @@ def app_factory(conf, init_semspace=None):
 
         return response
 
-    # @app.route('%s/follow/' % root_prefix, methods=['GET','POST'])
-    # def my_form_post():
-    #     text = request.args.get('searchbox')
-    #     processed_text = text.upper()
-    #     print('Hi', flush=True)
-    #     print(processed_text, flush=True)
-    #     return processed_text
+
 
     @app.route('/process', methods=['POST'])
     def process():
@@ -653,18 +622,6 @@ def app_factory(conf, init_semspace=None):
 
         return jsonify({'error': 'Missing data!'})
 
-    # @app.route('/calculate_result', methods=['POST'])
-    # def calculate_result():
-    #     a = int(request.args.get('val1'))
-    #     b = int(request.args.get('val2'))
-    #     print('Hi', flush=True)
-    #     return jsonify({"result": a + b})
-
-
-    # @app.route('%s/calculate_result' % root_prefix, methods=['GET','POST'])
-    # def calculate_result():
-    #     a = int(request.args.get('val1'))
-    #     return jsonify({"result": a})
 
 
 
