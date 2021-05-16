@@ -309,10 +309,23 @@
 
     <!--</div>-->
 
-<div id="scrollable-dropdown-menu">
-  <input class="typeahead" type="text" placeholder="Select a prototype to see image gallery" autocomplete="off" spellcheck="false">
+<!--<div id="scrollable-dropdown-menu">-->
+	<!--<form method="GET">-->
+  <!--<input class="typeahead" id="searchbox" name="searchbox" type="text" placeholder="Select a prototype" autocomplete="off" spellcheck="false">-->
+		<!--<button class= "get_result" id="follow" type="submit">Search</button>-->
+<!--</form>-->
+<!--</div>-->
+				  <div id="scrollable-dropdown-menu">
+	<form action='/process' method="POST" id="todo-form">
+  <input class="typeahead" id="searchbox" name="searchbox" type="text" placeholder="Select a prototype" autocomplete="off" spellcheck="false">
+		<button class= "get_result" id="follow" type="submit">Search</button>
+</form>
 </div>
 
+
+<!--<div class='result'></div>-->
+<!--<button id="follow" onclick="ajax_follow()">Add</button>-->
+<p id="response" name="response">text</p>
 
 				  <!-- /input-group -->
 				  				      <!--<div class="bs-example">-->
@@ -331,9 +344,28 @@
         </a>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
+
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body scrollable-panel">
 		    <button type="button" class="btn btn-default">CASTLE_000Q</button>
+		  <button type="button" class="btn btn-default">CASTLE_001</button>
+		  <button type="button" class="btn btn-default">CASTLE_002</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
+		  <button type="button" class="btn btn-default">CASTLE_004</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_000Q</button>
+		  <button type="button" class="btn btn-default">CASTLE_001</button>
+		  <button type="button" class="btn btn-default">CASTLE_002</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
+		  <button type="button" class="btn btn-default">CASTLE_004</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
+		  <button type="button" class="btn btn-default">CASTLE_000Q</button>
+		  <button type="button" class="btn btn-default">CASTLE_001</button>
+		  <button type="button" class="btn btn-default">CASTLE_002</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
+		  <button type="button" class="btn btn-default">CASTLE_004</button>
+		  		    <button type="button" class="btn btn-default">CASTLE_005</button>
+		  <button type="button" class="btn btn-default">CASTLE_000Q</button>
 		  <button type="button" class="btn btn-default">CASTLE_001</button>
 		  <button type="button" class="btn btn-default">CASTLE_002</button>
 		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
@@ -343,156 +375,7 @@
       </div>
     </div>
   </div>
-						  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          CATHEDRAL
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          CHURCH
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-		    <button type="button" class="btn btn-default">CASTLE_000Q</button>
-		  <button type="button" class="btn btn-default">CASTLE_001</button>
-		  <button type="button" class="btn btn-default">CASTLE_002</button>
-		  		    <button type="button" class="btn btn-default">CASTLE_003</button>
-		  <button type="button" class="btn btn-default">CASTLE_004</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		    <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>
-		  <button type="button" class="btn btn-default">Middle</button>      </div>
-    </div>
-  </div>
+
 			  </div>
 
 </div>
@@ -608,17 +491,6 @@
 </div>
 
 
-<!--&lt;!&ndash; jQuery (necessary for Bootstrap's JavaScript plugins) &ndash;&gt;-->
-<!--<script src="{{ url_for('static', filename='js/jquery/jquery-1.11.1.min.js') }}"></script>-->
-	  <!--<script src="{{ url_for('static', filename='js/bower_components/jquery/dist/jquery.min.js') }}"></script>-->
-
-<!--<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}" /></script>-->
-<!--<script src="{{ url_for('static', filename='bootstrap-select/bootstrap-select.min.js') }}" /></script>-->
-	  <!--&lt;!&ndash;<script src="{{ url_for('static', filename='Users/samski/bower_components/typeahead.js/dist/typeahead.bundle.js') }}" /></script>&ndash;&gt;-->
-<!--<script  type="text/javascript" src="/Users/samski/Downloads/snaut-master/snaut-english/static/js/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>-->
-	  <!--<script src="{{ url_for('static', filename='js/bower_components/typeahead.js/dist/typeahead.bundle.js') }}" /></script>-->
-<!--<script>-->
-<!--<script>-->
 
 	  <script src="{{ static_prefix }}/js/jquery/jquery-1.11.1.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -628,7 +500,32 @@
 
 	  <script src="{{ static_prefix }}/js/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
 
-<script>
+  <!--<script src="https://code.jquery.com/jquery-3.5.1.js"-->
+          <!--integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="-->
+          <!--crossorigin="anonymous"></script>-->
+
+  <script type="text/javascript">
+    $(document).on('submit','#todo-form',function(e)
+                   {
+      console.log('hello');
+      e.preventDefault();
+      $.ajax({
+        type:'POST',
+        url:'/process',
+        data:{
+          searchbox:$("#searchbox").val()
+        },
+        success:function(data)
+        {
+          <!--alert('saved');-->
+          $('#response').html(data['word']);
+		<!--$("#response").replaceWith(data);-->
+        }
+      })
+    });
+  </script>
+
+	  <script>
 
 /* set api prefix for snaut.js */
 window.snaut = { 'apiPrefix': '{{ api_prefix }}' };

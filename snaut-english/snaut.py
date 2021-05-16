@@ -635,6 +635,39 @@ def app_factory(conf, init_semspace=None):
 
         return response
 
+    # @app.route('%s/follow/' % root_prefix, methods=['GET','POST'])
+    # def my_form_post():
+    #     text = request.args.get('searchbox')
+    #     processed_text = text.upper()
+    #     print('Hi', flush=True)
+    #     print(processed_text, flush=True)
+    #     return processed_text
+
+    @app.route('/process', methods=['POST'])
+    def process():
+
+        text = request.form['searchbox']
+
+        if text:
+            return jsonify({'word': text})
+
+        return jsonify({'error': 'Missing data!'})
+
+    # @app.route('/calculate_result', methods=['POST'])
+    # def calculate_result():
+    #     a = int(request.args.get('val1'))
+    #     b = int(request.args.get('val2'))
+    #     print('Hi', flush=True)
+    #     return jsonify({"result": a + b})
+
+
+    # @app.route('%s/calculate_result' % root_prefix, methods=['GET','POST'])
+    # def calculate_result():
+    #     a = int(request.args.get('val1'))
+    #     return jsonify({"result": a})
+
+
+
     @app.route('%s/doc/<section>' % root_prefix)
     def help(section):
         """Return a markdown file from the doc directory rendered to html."""
@@ -654,6 +687,8 @@ def app_factory(conf, init_semspace=None):
         return render_template('help.html', **locals())
 
     return app
+
+
 
 if __name__ == '__main__':
 

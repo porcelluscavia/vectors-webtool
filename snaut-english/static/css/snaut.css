@@ -110,12 +110,24 @@ input.small-input {
 	margin: 100px;
 }
 
+.scrollable-panel{
+      height:300px;
+      overflow-y:scroll;
+      width:100%;
+      }
+
+
+.typeahead {
+	width: 100%;
+}
 
 #scrollable-dropdown-menu .tt-menu {
    max-height: 150px;
    overflow-y: auto;
    background-color: white;
  }
+
+
 /* align tabs to right */
 
 /*
