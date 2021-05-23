@@ -342,21 +342,23 @@ def app_factory(conf, init_semspace=None):
         metric = data['metric']
         n = data.get('n', 10)
         words_1 = data['words1']
-        vec_space = data['vecSpace']
+        vec_space = data['vecSpace'] #should be 'normal', 'img', or 'proto'
 
         (words_1_ok, words_1_nd) = split_by_defined(words_1, semspace_type = vec_space)
 
         if 'words2' not in data:
             words_2_nd = None
-            if vec_space == 'normal':
-                most_similar = semspace.most_similar(words_1_ok,
-                                                     n=n, metric=metric)
-            elif vec_space == 'img':
-                most_similar = semspace2.most_similar(words_1_ok,
-                                                     n=n, metric=metric)
-            elif vec_space == 'proto':
-                most_similar = semspace3.most_similar(words_1_ok,
-                                                     n=n, metric=metric)
+            most_similar = semspace.most_similar(words_1_ok,n=n, metric=metric, type=vec_space)
+            #the following code is for when semspaces are loaded in separately
+            # if vec_space == 'normal':
+            #     most_similar = semspace.most_similar(words_1_ok,
+            #                                          n=n, metric=metric)
+            # elif vec_space == 'img':
+            #     most_similar = semspace2.most_similar(words_1_ok,
+            #                                          n=n, metric=metric)
+            # elif vec_space == 'proto':
+            #     most_similar = semspace3.most_similar(words_1_ok,
+            #                                          n=n, metric=metric)
 
         else:
             words_2 = data['words2']

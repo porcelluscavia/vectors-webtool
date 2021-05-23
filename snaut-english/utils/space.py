@@ -3,6 +3,7 @@ Module for working with semantic spaces in Python.
 """
 
 import numpy as np
+import re
 import scipy.sparse
 import scipy.stats
 import sklearn.metrics.pairwise as smp
@@ -48,6 +49,27 @@ class SemanticSpace(object):
         self.shape = self.vectors.shape
 
         self.word2id = dict(zip(words, range(len(words))))
+
+    def get_proto_or_img(self, type = 'img'):
+        #put vectors and words side by side and
+        #only get the indices that satisfy a certain regex
+
+        img_idx = [i for i, item in enumerate(self.words) if re.search('\d', item)]
+        proto_idx = list(set(range(0, len(self.words))) - set(img_idx))
+
+
+        if type == 'img':
+            img_names = [self.words[x] for x in img_idx]
+            img_vectors = np.delete(self.vectors, proto_idx, axis=0)
+            return img_names, img_vectors
+
+        elif type == 'proto':
+            proto_names = [self.words[x] for x in proto_idx]
+            proto_vectors = np.delete(self.vectors, img_idx, axis=0)
+            return proto_names, proto_vectors
+        return
+
+        #get the indices not included, the negative - those are the prototypes
 
     def included_words(self):
         """All included words."""
@@ -135,15 +157,15 @@ class SemanticSpace(object):
         sims = self.most_similar([word], l2, n, metric)
         return sims[word]
 
-    def most_similar(self, l1, l2=None, n=10, metric='cosine'):
+    def most_similar(self, l1, l2=None, n=10, metric='cosine', type='normal'):
         """Return distance matrix with distances between pairs of words."""
         if not l1:
             return None
 
         if l2 is None:
-            sims = self.all_distances(l1, metric=metric)
+            sims = self.all_distances(l1, metric=metric, type=type)
         else:
-            sims = self.matrix_distances(l1, l2, metric=metric)
+            sims = self.matrix_distances(l1, l2, metric=metric, type=type)
 
         most_similar = {}
         sim_cols = sims.columns
@@ -158,10 +180,14 @@ class SemanticSpace(object):
             return most_similar
 
         for word, neighbours in sims.iterrows():
+
+            #we get the indices here that are up to n
             neigh_indexes = neighbours.argsort().values[:n]
             neighs = sim_cols[neigh_indexes]
             neighs_dist = [float(d) for d in neighbours.values[neigh_indexes]]
             most_similar[word] = list(zip(neighs, neighs_dist))
+
+
 
         return most_similar
 
@@ -180,15 +206,22 @@ class SemanticSpace(object):
         return smp.pairwise_distances(X, Y, metric=metric,
                                       n_jobs=n_jobs, **kwds)
 
-    def all_distances(self, l1, metric='cosine'):
+    def all_distances(self, l1, metric='cosine', type='normal'):
         """Return distance matrix with distances to all words."""
 
         l1_vecs = self.word_vectors_matrix(l1)
         l1_labels = [self.label(e) for e in l1]
 
-        sims = self.pairwise_distances(l1_vecs, self.vectors, metric=metric)
+        if type == 'normal':
+            #get only rows which have a name
+            vectors = self.vectors
+            words = self.words
+        elif type == 'img' or 'proto':
+            words, vectors = self.get_proto_or_img(type = type)
 
-        return pd.DataFrame(sims, l1_labels, self.words)
+        sims = self.pairwise_distances(l1_vecs, vectors, metric=metric)
+
+        return pd.DataFrame(sims, l1_labels, words)
 
     def pair_distance(self, w1, w2, metric='cosine'):
         """Calculate distance between two words."""
@@ -218,7 +251,7 @@ class SemanticSpace(object):
 
         return distances
 
-    def matrix_distances(self, l1, l2=None, metric='cosine'):
+    def matrix_distances(self, l1, l2=None, metric='cosine', type='normal'):
         """Return distance matrix with distances between pairs of words."""
 
         l1_vecs = self.word_vectors_matrix(l1)
