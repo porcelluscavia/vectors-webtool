@@ -105,8 +105,10 @@ def app_factory(conf, init_semspace=None):
         """Load a semantic space based on the path and format."""
 
         global semspace
-        global semspace2
-        global semspace3
+
+        if multiple_spaces:
+            global semspace2
+            global semspace3
 
         if semspace_format == 'ssmarket':
             semspace = SemanticSpace.from_ssmarket(semspace_path,
@@ -114,26 +116,29 @@ def app_factory(conf, init_semspace=None):
             if semspace_type =='normal':
                 semspace = SemanticSpace.from_ssmarket(semspace_path,
                                                   prenorm=prenormalize)
-            elif semspace_type =='img':
-                semspace2 = SemanticSpace.from_ssmarket(semspace_path,
+            elif multiple_spaces:
+                if semspace_type =='img':
+                    semspace2 = SemanticSpace.from_ssmarket(semspace_path,
                                                   prenorm=prenormalize)
-            elif semspace_type =='proto':
-                semspace3 = SemanticSpace.from_ssmarket(semspace_path,
-                                                  prenorm=prenormalize)
+                elif semspace_type =='proto':
+                    semspace3 = SemanticSpace.from_ssmarket(semspace_path,
+                                                      prenorm=prenormalize)
             return True
+
         elif semspace_format == 'csv':
             if semspace_type =='normal':
                 semspace = SemanticSpace.from_csv(semspace_path,
                                                   prenorm=prenormalize,
                                                   dtype=numpy_dtype)
-            elif semspace_type =='img':
-                semspace2 = SemanticSpace.from_csv(semspace_path,
-                                                  prenorm=prenormalize,
-                                                  dtype=numpy_dtype)
-            elif semspace_type =='proto':
-                semspace3 = SemanticSpace.from_csv(semspace_path,
-                                                  prenorm=prenormalize,
-                                                  dtype=numpy_dtype)
+            elif multiple_spaces:
+                if semspace_type =='img':
+                    semspace2 = SemanticSpace.from_csv(semspace_path,
+                                                      prenorm=prenormalize,
+                                                      dtype=numpy_dtype)
+                elif semspace_type =='proto':
+                    semspace3 = SemanticSpace.from_csv(semspace_path,
+                                                      prenorm=prenormalize,
+                                                      dtype=numpy_dtype)
 
             return True
         else:
