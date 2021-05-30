@@ -196,21 +196,21 @@ def app_factory(conf, init_semspace=None):
 
         for w in words:
             x = [word.upper() for word in w]
-            if semspace_type == 'normal':
-                if semspace.defined_at(x):
-                    defined.append(x)
-                else:
-                    undefined.append(x)
-            elif semspace_type == 'img':
-                if semspace2.defined_at(x):
-                    defined.append(x)
-                else:
-                    undefined.append(x)
-            elif semspace_type == 'proto':
-                if semspace3.defined_at(x):
-                    defined.append(x)
-                else:
-                    undefined.append(x)
+            # if semspace_type == 'normal':
+            if semspace.defined_at(x):
+                defined.append(x)
+            else:
+                undefined.append(x)
+            # elif semspace_type == 'img':
+            #     if semspace2.defined_at(x):
+            #         defined.append(x)
+            #     else:
+            #         undefined.append(x)
+            # elif semspace_type == 'proto':
+            #     if semspace3.defined_at(x):
+            #         defined.append(x)
+            #     else:
+            #         undefined.append(x)
 
 
         return defined, undefined
@@ -625,7 +625,7 @@ def app_factory(conf, init_semspace=None):
         text = request.form['searchbox']
 
         if text:
-            return jsonify({'word': text})
+            return jsonify({'word': text.upper()})
 
         return jsonify({'error': 'Missing data!'})
 

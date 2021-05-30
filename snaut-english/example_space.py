@@ -14,7 +14,7 @@ space = np.array([[ 0.61502426,  0.35800892,  0.46591138],
                  [ 0.36690094,  0.70666147,  0.3300295 ],
                  [ 0.19479401,  0.3334173 ,  0.79296408]])
 
-rows = ['first', 'second', 'third', 'fourth_1', 'fifth', 'sixth',
+rows = ['first', 'second', 'third', 'ELEPHANT_001', 'fifth', 'sixth',
         'seventh', 'eighth', 'ninth', 'tenth_002', 'eleventh']
 columns = ['one', 'two', 'three']
 readme_title = 'Random semantic space'
