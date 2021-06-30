@@ -1,12 +1,15 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+import sys
+sys.path.insert(0, '/var/www/html/sfb833/snaut/snaut-master')
+
 
 from configparser import ConfigParser
 
 from .snaut import app_factory
 
+
+
 conf = ConfigParser()
 
 conf.read(['config.ini', 'config_local.ini'])
 
-app = app_factory(conf)
+application = app_factory(conf)

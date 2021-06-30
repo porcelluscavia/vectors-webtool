@@ -19,9 +19,9 @@ import io
 from flask import Flask, jsonify, request, make_response
 from flask import Markup, render_template
 
-from utils.utils import df_to_csv_string, get_logger
+from .utils.utils import df_to_csv_string, get_logger
 #from semspaces.space import SemanticSpace
-from utils.space import SemanticSpace
+from .utils.space import SemanticSpace
 
 
 # The global semspace object representing the loaded semantic space is necessary
@@ -61,7 +61,7 @@ def app_factory(conf, init_semspace=None):
     log_file = conf.get('server', 'log_file')
     log_level = conf.get('server', 'log_level')
 
-    logger = get_logger(log_name, log_file, log_level)
+    #logger = get_logger(log_name, log_file, log_level)
 
     semspaces_dir = conf.get('semantic_space', 'semspaces_dir')
     prenormalize = conf.getboolean('semantic_space', 'prenormalize')
@@ -93,9 +93,9 @@ def app_factory(conf, init_semspace=None):
             if not form:
                 form = '-'
 
-            logger.info('%s %s %s %s',
-                        ip, url_path, json.dumps(data),
-                        json.dumps(form))
+            # logger.info('%s %s %s %s',
+            #             ip, url_path, json.dumps(data),
+            #             json.dumps(form))
 
             return f(*args, **kwargs)
 

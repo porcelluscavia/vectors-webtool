@@ -3,13 +3,13 @@
 import os
 import logging
 from logging.handlers import RotatingFileHandler
-
-import cStringIO as StringIO
+from io import StringIO
+# import cStringIO as StringIO
 
 
 def df_to_csv_string(df):
     """Converts pandas DataFrame to a CSV string."""
-    out = StringIO.StringIO()
+    out = StringIO()
     df.to_csv(out, encoding='utf-8')
     return out.getvalue()
 
