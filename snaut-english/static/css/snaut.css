@@ -1,0 +1,180 @@
+.top-buffer { margin-top: 20px; }
+
+/* background styling */
+
+/*
+body {
+	background: url('/static/images/background.jpg');
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+}
+
+.transbox {
+	background: rgba(255,255,255,0.97);
+	position:absolute;
+	top: 0;
+	bottom 0;
+	left: 0;
+	right: 0;
+}
+
+.content {
+	background: rgba(255,255,255,0.3);
+	padding-bottom: 40px;
+}
+*/
+
+/* browse buttons styling */
+
+.btn-group-vertical.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.center-block {
+  display: block;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+
+.btn-file input[type=file] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	font-size: 100px;
+	text-align: right;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: inherit;
+	display: block;
+}
+
+#bootstrap-overrides  { /* 100+1=101 priority score, yay! */
+  line-height: 1;
+  color: inherit;
+}
+
+/*
+.btn-file input[type=file]:disabled {
+border-radius: 0px;
+box-shadow: none;
+cursor: not-allowed;
+opacity: 0.65;
+pointer-events: none;
+}
+ */
+
+/* no resize for texareas */
+.no-resize {
+	resize: none;
+}
+
+/* explore tab */
+
+input.small-input {
+	max-width: 50px;
+}
+
+
+
+.rightMenu {
+    position:relative;
+    float:right;
+}
+.right-caret {
+
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid #000000;
+    display: inline-block;
+    height: 0;
+    opacity: 1;
+    vertical-align: top;
+    width: 0;
+
+}
+.right
+{
+    float:right;
+}
+
+.bs-example {
+	font-family: sans-serif;
+	position: relative;
+	margin: 100px;
+}
+
+.scrollable-panel{
+      height:600px;
+      overflow-y:scroll;
+      width:100%;
+      }
+
+
+.typeahead {
+	width: 100%;
+}
+
+#scrollable-dropdown-menu .tt-menu {
+   max-height: 150px;
+   overflow-y: auto;
+   background-color: white;
+ }
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic);
+
+font-family: 'Open Sans', sans-serif;
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*
+body {
+  min-height: 3000px;
+  padding-top: 70px;
+  font-family: 'Open Sans', sans-serif;
+}
+ */
+
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+/* align tabs to right */
+
+/*
+.right-tabs .nav {
+float: right;
+border-bottom: 0px;
+}
+
+.right-tabs .nav li { float: left }
+
+.right-tabs .tab-content {
+float: left;
+border-top: 1px solid #ddd;
+margin-top: -1px;
+}
+ */
+

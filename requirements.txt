@@ -1,0 +1,10 @@
+Flask
+fs
+unicodecsv
+pandas
+Markdown
+numpy
+scipy
+scikit_learn
+gunicorn
+configparser
