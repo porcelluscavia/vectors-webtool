@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="200cb0f9-9d40-4baf-b39c-f1e0665ee1a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/snaut.py" afterPath="$PROJECT_DIR$/snaut-english/snaut.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/static/css/snaut.css" afterPath="$PROJECT_DIR$/snaut-english/static/css/snaut.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" afterPath="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/templates/index.html" afterPath="$PROJECT_DIR$/snaut-english/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +16,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2884">
-              <caret line="474" column="0" lean-forward="true" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
+            <state relative-caret-position="283">
+              <caret line="321" column="1" lean-forward="false" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -44,8 +40,8 @@
       <file leaf-file-name="snaut.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snaut-english/snaut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6003">
-              <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+            <state relative-caret-position="1687">
+              <caret line="1129" column="9" lean-forward="false" selection-start-line="1129" selection-start-column="9" selection-end-line="1129" selection-end-column="9" />
               <folding>
                 <element signature="e#25437#25446#0" expanded="true" />
               </folding>
@@ -66,8 +62,8 @@
       <file leaf-file-name="snaut.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="2715" column="3066" lean-forward="false" selection-start-line="2715" selection-start-column="3066" selection-end-line="2715" selection-end-column="3066" />
+            <state relative-caret-position="585">
+              <caret line="2752" column="36" lean-forward="true" selection-start-line="2752" selection-start-column="36" selection-end-line="2752" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -134,7 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>exploreSingleInputId</find>
       <find>explore-csv-working</find>
       <find>matrix-working</find>
       <find>explore-working</find>
@@ -163,6 +158,7 @@
       <find>analogy</find>
       <find>fritz</find>
       <find>csv</find>
+      <find>neighbours</find>
       <find>init = function()</find>
     </findStrings>
     <replaceStrings>
@@ -705,16 +701,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2884">
-          <caret line="474" column="0" lean-forward="true" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#17870#17877#1" expanded="true" />
-            <element signature="e#18576#18583#1" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/data/new_vectors.mini.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -726,25 +716,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/new_vectors.mini.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="12" />
+    <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="321" column="1" lean-forward="false" selection-start-line="321" selection-start-column="1" selection-end-line="321" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#17870#17877#1" expanded="true" />
+            <element signature="e#18576#18583#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="2715" column="3066" lean-forward="false" selection-start-line="2715" selection-start-column="3066" selection-end-line="2715" selection-end-column="3066" />
+        <state relative-caret-position="585">
+          <caret line="2752" column="36" lean-forward="true" selection-start-line="2752" selection-start-column="36" selection-end-line="2752" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snaut-english/snaut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6003">
-          <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+        <state relative-caret-position="1687">
+          <caret line="1129" column="9" lean-forward="false" selection-start-line="1129" selection-start-column="9" selection-end-line="1129" selection-end-column="9" />
           <folding>
             <element signature="e#25437#25446#0" expanded="true" />
           </folding>

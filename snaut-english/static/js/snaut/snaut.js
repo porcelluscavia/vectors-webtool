@@ -2686,12 +2686,12 @@
     semspace.subscribe('semspaceViewSpaceLoaded', 'new-space-loaded', semspaceView.hideSpaceLoading);
     semspace.subscribe('semspaceViewSpaceLoadingError', 'space-load-error', semspaceView.spaceLoadingError);
     exploreForm = new ExploreForm;
-//    explorecsvForm = new ExploreCSVForm;
+    explorecsvForm = new ExploreCSVForm;
     $(exploreSingleGoId).click(exploreForm.go);
-//    $(exploreCSVGoId).click(explorecsvForm.go);
+    $(exploreCSVGoId).click(explorecsvForm.go);
     //$(exploreCSVGoId).click(exploreForm.gocsv);
     exploreForm.subscribe('semspaceExploreGo', 'explore-form-go', semspace.explore);
-//    explorecsvForm.subscribe('semspaceExploreGo1', 'explore-form-csv-go', semspace.exploreCSV);
+    explorecsvForm.subscribe('semspaceExploreGo1', 'explore-form-csv-go', semspace.exploreCSV);
     exploreView = new ExploreView;
     semspace.subscribe('exploreViewUpdate', 'explore-update', exploreView.update);
     semspace.subscribe('exploreViewWorking', 'explore-working', exploreView.showWorking);
@@ -2728,22 +2728,22 @@
   source: protoWords
 });
 
-            //  $('#scrollable-dropdown-menu').typeahead({
-            //         highlight: true,
-            //         minLength: 1
-            //     },
-            //     {
-            //         name: 'supplier',
-            //         source: suppliers,
-            //   }).on('keydown', function(e){
-            //     var e = jQuery.Event("keypress");
-            //     e.keyCode = e.which = 9; // 9 == tab
-            //     if (event.which == 13) // if pressing enter
-            //         $(this).trigger(e); // trigger "tab" key - which works as "enter"
+              $('#scrollable-dropdown-menu').typeahead({
+                     highlight: true,
+                     minLength: 1
+                 },
+                 {
+                     name: 'supplier',
+                     source: suppliers,
+               }).on('keydown', function(e){
+                 var e = jQuery.Event("keypress");
+                 e.keyCode = e.which = 9; // 9 == tab
+                 if (event.which == 13) // if pressing enter
+                     $(this).trigger(e); // trigger "tab" key - which works as "enter"
 
-            // }).bind('typeahead:render', function(e) {
-            //     $('#scrollable-dropdown-menu').parent().find('.tt-selectable:first').addClass('tt-cursor');
-            // });
+             }).bind('typeahead:render', function(e) {
+                 $('#scrollable-dropdown-menu').parent().find('.tt-selectable:first').addClass('tt-cursor');
+             });
 
     initTextAreaLoaders();
     initAvailabilityChecks();
