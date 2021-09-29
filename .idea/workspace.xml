@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="200cb0f9-9d40-4baf-b39c-f1e0665ee1a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snaut-english/snaut.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/snaut.py" afterPath="$PROJECT_DIR$/snaut-english/snaut.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/static/css/snaut.css" afterPath="$PROJECT_DIR$/snaut-english/static/css/snaut.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" afterPath="$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/snaut-english/templates/index.html" afterPath="$PROJECT_DIR$/snaut-english/templates/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,13 +20,23 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5612">
-              <caret line="691" column="4" lean-forward="false" selection-start-line="730" selection-start-column="0" selection-end-line="734" selection-end-column="18" />
+            <state relative-caret-position="2884">
+              <caret line="474" column="0" lean-forward="true" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#58364#58371#1" expanded="true" />
-                <element signature="e#59070#59077#1" expanded="true" />
+                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#17870#17877#1" expanded="true" />
+                <element signature="e#18576#18583#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_vectors.mini.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/new_vectors.mini.txt">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -30,9 +44,11 @@
       <file leaf-file-name="snaut.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/snaut-english/snaut.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3203">
-              <caret line="473" column="28" lean-forward="false" selection-start-line="473" selection-start-column="28" selection-end-line="473" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="-6003">
+              <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+              <folding>
+                <element signature="e#25437#25446#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +66,18 @@
       <file leaf-file-name="snaut.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5540">
-              <caret line="784" column="37" lean-forward="false" selection-start-line="784" selection-start-column="37" selection-end-line="784" selection-end-column="37" />
+            <state relative-caret-position="624">
+              <caret line="2715" column="3066" lean-forward="false" selection-start-line="2715" selection-start-column="3066" selection-end-line="2715" selection-end-column="3066" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,18 +106,8 @@
       <file leaf-file-name="snaut.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/static/css/snaut.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/snaut-english/static/bootstrap/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="746">
-              <caret line="1816" column="2" lean-forward="false" selection-start-line="1816" selection-start-column="2" selection-end-line="1816" selection-end-column="11" />
+            <state relative-caret-position="-1728">
+              <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -100,8 +116,8 @@
       <file leaf-file-name="space.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/snaut-english/utils/space.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+            <state relative-caret-position="85">
+              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -118,18 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>matrix-form-go</find>
-      <find>semspacematrixgo</find>
-      <find>semspace</find>
-      <find>post</find>
-      <find>a</find>
-      <find>data</find>
-      <find>calculate</find>
-      <find>exploreCSVView</find>
-      <find>exploreSingleGoId</find>
-      <find>arithForm</find>
-      <find>space.py</find>
-      <find>exploreCSV</find>
       <find>exploreSingleInputId</find>
       <find>explore-csv-working</find>
       <find>matrix-working</find>
@@ -142,12 +146,24 @@
       <find>similar-csv</find>
       <find>explore-single-input</find>
       <find>explore-single-go</find>
-      <find>matrix</find>
       <find>exploresinglegoid</find>
-      <find>csv</find>
       <find>writer</find>
       <find>protoword</find>
       <find>btn btn</find>
+      <find>#scr</find>
+      <find>todo</find>
+      <find>style</find>
+      <find>.typ</find>
+      <find>coffeescr</find>
+      <find>matrix</find>
+      <find>init</find>
+      <find>Compare with:</find>
+      <find>semantic</find>
+      <find>!DOCTYPE</find>
+      <find>analogy</find>
+      <find>fritz</find>
+      <find>csv</find>
+      <find>init = function()</find>
     </findStrings>
     <replaceStrings>
       <replace>$PROJECT_DIR$/snaut/static/</replace>
@@ -201,10 +217,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="195" />
-    <option name="y" value="162" />
-    <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="x" value="84" />
+    <option name="y" value="37" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -224,7 +240,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,27 +253,11 @@
               <item name="snaut-master" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="snaut-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snaut-master" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snaut-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snaut-master" type="462c0819:PsiDirectoryNode" />
-              <item name="doc" type="462c0819:PsiDirectoryNode" />
-              <item name="local" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="snaut-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="snaut-master" type="462c0819:PsiDirectoryNode" />
-              <item name="snaut-english" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -411,13 +411,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="195" y="162" width="1440" height="877" extended-state="0" />
+    <frame x="84" y="37" width="1920" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09322917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cargo" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2790433" sideWeight="0.5023015" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.49769852" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328934" sideWeight="0.49769852" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -504,13 +505,6 @@
     <entry file="file://$PROJECT_DIR$/test/server_tests.py" />
     <entry file="file://$PROJECT_DIR$/test/example_space.py" />
     <entry file="file://$PROJECT_DIR$/utils/imports.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python-getting-started/Procfile" />
     <entry file="file://$USER_HOME$/PycharmProjects/vid-annotator/snaut.log" />
     <entry file="file://$PROJECT_DIR$/snaut-english/static/js/bower_components/typeahead.js/dist/typeahead.jquery.min.js">
@@ -592,20 +586,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/new_vectors.mini.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/final_vecspace.txt">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/final_vecspace.txt" />
     <entry file="file://$PROJECT_DIR$/snaut-english/utils/tab_to_space.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -676,34 +657,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
+    <entry file="file://$PROJECT_DIR$/snaut-english/static/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5540">
-          <caret line="784" column="37" lean-forward="false" selection-start-line="784" selection-start-column="37" selection-end-line="784" selection-end-column="37" />
+        <state relative-caret-position="29444">
+          <caret line="1732" column="3" lean-forward="false" selection-start-line="1732" selection-start-column="3" selection-end-line="1732" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snaut-english/utils/space.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="5" column="9" lean-forward="true" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/static/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="1816" column="2" lean-forward="false" selection-start-line="1816" selection-start-column="2" selection-end-line="1816" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/static/css/snaut.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -724,6 +689,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snaut-english/static/css/snaut.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1728">
+          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2884">
+          <caret line="474" column="0" lean-forward="true" selection-start-line="474" selection-start-column="0" selection-end-line="474" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#17870#17877#1" expanded="true" />
+            <element signature="e#18576#18583#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/snaut-english/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -732,23 +726,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/snaut-english/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/data/new_vectors.mini.txt">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snaut-english/static/js/snaut/snaut.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5612">
-          <caret line="691" column="4" lean-forward="false" selection-start-line="730" selection-start-column="0" selection-end-line="734" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#58364#58371#1" expanded="true" />
-            <element signature="e#59070#59077#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="624">
+          <caret line="2715" column="3066" lean-forward="false" selection-start-line="2715" selection-start-column="3066" selection-end-line="2715" selection-end-column="3066" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/snaut-english/snaut.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3203">
-          <caret line="473" column="28" lean-forward="false" selection-start-line="473" selection-start-column="28" selection-end-line="473" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="-6003">
+          <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+          <folding>
+            <element signature="e#25437#25446#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
