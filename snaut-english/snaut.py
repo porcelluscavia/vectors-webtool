@@ -1095,8 +1095,9 @@ def app_factory(conf, init_semspace=None):
                 most_similar = semspace3.most_similar(words_1_ok, words_2_ok,
                                                      n=n, metric=metric)
 
+        #return metric here as well, redefine distancetable and pass that
         result = {'similarities': most_similar,
-                  'notDefined': {'words1': words_1_nd, 'words2': words_2_nd}}
+                  'notDefined': {'words1': words_1_nd, 'words2': words_2_nd}, 'metric': data['metric']}
 
 
         return jsonify(result)
@@ -1151,7 +1152,7 @@ def app_factory(conf, init_semspace=None):
 
 
         for word in words_1_ok:
-            writer.writerow([word[0], metric])
+            writer.writerow([word[0], data['metric']])
             for term, val in most_similar[word[0]]:
                 writer.writerow([term, val])
             writer.writerow('')
@@ -1227,31 +1228,37 @@ def app_factory(conf, init_semspace=None):
     @log_data
     def offset():
         """
-        Return n words closest to a calculated vector.
-
-        Current behavior of filtering out used words is consistent with the
-        implementation in the word2vec tools. It should be considered if this
-        should not be changed in the future versions.
+        Return the pairwise calculation for a specific picture and its prototype.
         """
+        data = json.loads(request.form['data'])
 
-        data = request.get_json()
-
-        positive = data['positive']
-        negative = data['negative']
         metric = map_metric(data['metric'])
-        n = data.get('n', 10)
+        word_pairs = data['wordPairs']
 
-        (positive_ok, positive_nd) = split_by_defined(positive)
-        (negative_ok, negative_nd) = split_by_defined(negative)
+        if matrix_size_limit > 0 and len(word_pairs) * 2 > matrix_size_limit:
+            return make_response("Matrix size error!")
 
-        closest = semspace.offset(positive_ok, negative_ok,
-                                  metric=metric, n=n, filter_used=True)
+        s = io.BytesIO()
 
-        result = {'closest': closest,
-                  'notDefined': {'positive': positive_nd,
-                                 'negative': negative_nd}}
+        writer = csv.writer(s)
+        writer.writerow(['word_1', 'word_2', data['metric']])
 
-        return jsonify(result)
+        if len(word_pairs) < 2:
+            for w1 in word_pairs:
+                w1 = [word.upper() for word in w1]
+                proto_w1 = w1 + "_PRO"
+                if semspace.defined_at(w1) & semspace.defined_at(proto_w1):
+                    dist = semspace.pair_distance(w1, proto_w1, metric)
+                    w1_label = ' '.join(w1)
+                    proto_w1_label = ' '.join(proto_w1)
+                    writer.writerow([w1_label, proto_w1_label, dist])
+
+        response = make_response(s.getvalue())
+        response.headers["Content-Disposition"] = (
+            "attachment; filename=typicalities.csv")
+
+        return response
+
 
     @app.route('%s/pairs/' % root_prefix, methods=['POST'])
     @log_data
@@ -1280,20 +1287,35 @@ def app_factory(conf, init_semspace=None):
         writer = csv.writer(s)
         writer.writerow(['word_1', 'word_2', data['metric']])
 
-        for w1, w2 in word_pairs:
-            w1 = [word.upper() for word in w1]
-            w2 = [word.upper() for word in w2]
-            if semspace.defined_at(w1) & semspace.defined_at(w2):
-                dist = semspace.pair_distance(w1, w2, metric)
-                w1_label = ' '.join(w1)
-                w2_label = ' '.join(w2)
-                writer.writerow([w1_label, w2_label, dist])
+        if len(word_pairs) < 2:
+            for w1 in word_pairs:
+                w1 = [word.upper() for word in w1]
+                proto_w1 = w1 + "_PRO"
+                if semspace.defined_at(w1) & semspace.defined_at(proto_w1):
+
+                    dist = semspace.pair_distance(w1, proto_w1, metric)
+                    w1_label = ' '.join(w1)
+                    proto_w1_label = ' '.join(proto_w1)
+                    writer.writerow([w1_label, proto_w1_label, dist])
+
+
+        else:
+            for w1, w2 in word_pairs:
+                w1 = [word.upper() for word in w1]
+                w2 = [word.upper() for word in w2]
+                if semspace.defined_at(w1) & semspace.defined_at(w2):
+                    dist = semspace.pair_distance(w1, w2, metric)
+                    w1_label = ' '.join(w1)
+                    w2_label = ' '.join(w2)
+                    writer.writerow([w1_label, w2_label, dist])
 
         response = make_response(s.getvalue())
         response.headers["Content-Disposition"] = (
             "attachment; filename=word-pairs.csv")
 
         return response
+
+
 
     @app.route('%s/defined-at/' % root_prefix, methods=['POST'])
     @log_data
