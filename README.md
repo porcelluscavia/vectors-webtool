@@ -20,25 +20,9 @@ Then, simply run the python file "/home/vectorswebtool/vectors-webtool/snaut-eng
 It may reload several times over the course of a few minutes before you see the site, especially if the vector space is large. Don't worry, this is normal behavior.
 
 
-For more information see [website](http://crr.ugent.be/snaut/).
-
-Snaut uses the `semspaces` module. See
-[here](http://github.com/pmandera/semspaces/) for more information.
-
-# Semantic spaces
-
-You can download a set of validated semantic spaces for English and Dutch
-[here](http://zipf.ugent.be/snaut/spaces/) (see Mandera, Keuleers, & Brysbaert,
-in press). 
-
-# Contribute 
-
-- Issue Tracker: https://github.com/pmandera/snaut/issues
-- Source Code: https://github.com/pmandera/snaut
-
 # Authors
 
-The tool was developed at Center for Reading Research, Ghent University by
+This tool is based on the snaut tool, which was developed at Center for Reading Research, Ghent University by
 [Paweł Mandera](http://crr.ugent.be/pawel-mandera).
 
 # License
@@ -46,6 +30,8 @@ The tool was developed at Center for Reading Research, Ghent University by
 The project is licensed under the Apache License 2.0.
 
 # References
+
+Günther, F., Marelli, M., Tureski, S, & Petilli, M. (2021). ViSpa (Vision Spaces): A computer-vision-based representation system for individual images and concept prototypes, with large-scale evaluation. psyArXiV preprint. https://doi.org/10.31234/osf.io/n4dmq
 
 Mandera, P., Keuleers, E., & Brysbaert, M. (in press). Explaining human
 performance in psycholinguistic tasks with models of semantic similarity based
